@@ -38,6 +38,11 @@ import java.util.LinkedList;
  * Implements a basic RecyclerView that displays a list of generated words.
  * - Clicking an item marks it as clicked.
  * - Clicking the fab button adds a new word to the list.
+ *
+ *
+ *
+ *Check this out
+ * https://www.journaldev.com/12372/android-recyclerview-example
  */
 public class MainActivity extends AppCompatActivity {
 
