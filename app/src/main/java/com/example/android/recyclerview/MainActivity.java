@@ -41,7 +41,7 @@ import java.util.LinkedList;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private final LinkedList<String> mWordList = new LinkedList<>();
+    private final LinkedList<VolumeInfo> mWordList = new LinkedList<>();
 
     private RecyclerView mRecyclerView;
     private WordListAdapter mAdapter;
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int wordListSize = mWordList.size();
                 // Add a new word to the wordList.
-                mWordList.addLast("+ Word " + wordListSize);
+                //mWordList.addLast("+ Word " + wordListSize);
                 // Notify the adapter, that the data has changed.
                 mRecyclerView.getAdapter().notifyItemInserted(wordListSize);
                 // Scroll to the bottom.
@@ -115,13 +115,13 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-     public class hakan extends AsyncTask<Void,Void,LinkedList<String> >
-     {   LinkedList<String> datalist ;
+     public class hakan extends AsyncTask<Void, Void, LinkedList<VolumeInfo>>
+     {   LinkedList<VolumeInfo> datalist ;
          Context con;
          RecyclerView mRecyclerViewrecycleisaret;
        WordListAdapter adapterisaret;
 
-         public hakan(Context c,LinkedList<String> datalist, RecyclerView mRecyclerViewrecycleisaret, WordListAdapter adapterisaret) {
+         public hakan(Context c, LinkedList<VolumeInfo> datalist, RecyclerView mRecyclerViewrecycleisaret, WordListAdapter adapterisaret) {
              con=c;
              this.datalist = datalist;
              this.mRecyclerViewrecycleisaret = mRecyclerViewrecycleisaret;
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
          }
 
          @Override
-         protected LinkedList<String> doInBackground(Void... voids) {
+         protected LinkedList<VolumeInfo> doInBackground(Void... voids) {
 
             String returned= NetworkUtils.getBookInfo("otello");
              processreturned(returned);//since data list fieldof the main activity
@@ -152,8 +152,26 @@ public class MainActivity extends AppCompatActivity {
                      // catch if either field is empty and move on.
                      try {
                         String title = volumeInfo.getString("title");
-                        String authors = volumeInfo.getString("authors");
-                        datalist.add(title+":"+authors);
+                        String authors = "";
+                        for (int j=0;j<volumeInfo.getJSONArray("authors").length();j++) {
+                           authors+= volumeInfo.getJSONArray("authors").toString();
+                        }
+                        String description=volumeInfo.getString("description");
+                        int pagecount=volumeInfo.getInt("pageCount");
+                        VolumeInfo inf=new VolumeInfo();
+                        inf.setTitle(title);
+
+                        LinkedList <String> auths=new LinkedList<String>();
+                         for (int t=0;t<volumeInfo.getJSONArray("authors").length();t++)
+                         {auths.add(volumeInfo.getJSONArray("authors").get(t).toString());
+
+                         }
+                         inf.setAuthors(auths);
+
+
+
+
+                        datalist.add(inf);
 
 
                      } catch (Exception e){
@@ -173,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
 
          }
 
-         protected void onPostExecute(LinkedList<String> result) {
+         protected void onPostExecute(LinkedList<VolumeInfo> result) {
 
 
 

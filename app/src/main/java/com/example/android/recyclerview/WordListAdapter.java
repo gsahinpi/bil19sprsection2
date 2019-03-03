@@ -32,7 +32,7 @@ import java.util.LinkedList;
 public class WordListAdapter extends
         RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
 
-    private final LinkedList<String> mWordList;
+    private final LinkedList<VolumeInfo> mWordList;
     private final LayoutInflater mInflater;
 
     class WordViewHolder extends RecyclerView.ViewHolder
@@ -61,17 +61,19 @@ public class WordListAdapter extends
             int mPosition = getLayoutPosition();
 
             // Use that to access the affected item in mWordList.
-            String element = mWordList.get(mPosition);
+            String element = mWordList.get(mPosition).getTitle();
             // Change the word in the mWordList.
 
-            mWordList.set(mPosition, "Clicked! " + element);
+            VolumeInfo v=mWordList.get(mPosition);
+            v.setTitle("clicked"+v.getTitle());
+            mWordList.set(mPosition, v);
             // Notify the adapter, that the data has changed so it can
             // update the RecyclerView to display the data.
             mAdapter.notifyDataSetChanged();
         }
     }
 
-    public WordListAdapter(Context context, LinkedList<String> wordList) {
+    public WordListAdapter(Context context, LinkedList<VolumeInfo> wordList) {
         mInflater = LayoutInflater.from(context);
         this.mWordList = wordList;
     }
@@ -118,7 +120,7 @@ public class WordListAdapter extends
     public void onBindViewHolder(WordListAdapter.WordViewHolder holder,
                                  int position) {
         // Retrieve the data for that position.
-        String mCurrent = mWordList.get(position);
+        String mCurrent = mWordList.get(position).getTitle();
         // Add the data to the view holder.
         holder.wordItemView.setText(mCurrent);
     }
