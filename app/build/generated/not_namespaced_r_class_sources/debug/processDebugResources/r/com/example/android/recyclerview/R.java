@@ -3659,8 +3659,9 @@ public final class R {
     public static final int visible=0x7f0800b5;
     public static final int withText=0x7f0800b6;
     public static final int word=0x7f0800b7;
-    public static final int wrap=0x7f0800b8;
-    public static final int wrap_content=0x7f0800b9;
+    public static final int word2=0x7f0800b8;
+    public static final int wrap=0x7f0800b9;
+    public static final int wrap_content=0x7f0800ba;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f090000;

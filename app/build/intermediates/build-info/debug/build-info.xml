@@ -5,27 +5,26 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
-    ir-eligibility="CLASS_ADDED"
     plugin-version="3.3.1"
-    timestamp="1551636452105"
+    timestamp="1551637128190"
     token="-5183958220088301203"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="754" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="79" />
+        duration="0" />
     <task
         name="verifier"
-        duration="6" />
+        duration="0" />
 
     <artifact
-        location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
         type="SPLIT" />
 
     <build
@@ -74,11 +73,25 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="CLASS_ADDED"
-        timestamp="1551636452105"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1551636929861"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
+            location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
             location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1551637128190"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
             type="SPLIT" />
     </build>
 

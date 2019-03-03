@@ -1,4 +1,4 @@
-#Mon Feb 18 17:38:15 EET 2019
+#Sun Mar 03 21:15:37 EET 2019
 base.0=/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/transforms/dexMerger/debug/6
 path.0=classes.dex
 renamed.0=classes.dex
