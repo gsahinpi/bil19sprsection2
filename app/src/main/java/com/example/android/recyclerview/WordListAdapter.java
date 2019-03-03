@@ -24,6 +24,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Shows how to implement a simple Adapter for a RecyclerView.
@@ -38,6 +39,7 @@ public class WordListAdapter extends
     class WordViewHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener {
         public final TextView wordItemView;
+        public final TextView wordItemView2;
         final WordListAdapter mAdapter;
 
         /**
@@ -53,6 +55,7 @@ public class WordListAdapter extends
             wordItemView = itemView.findViewById(R.id.word);
             this.mAdapter = adapter;
             itemView.setOnClickListener(this);
+            wordItemView2 = itemView.findViewById(R.id.word2);;
         }
 
         @Override
@@ -121,8 +124,16 @@ public class WordListAdapter extends
                                  int position) {
         // Retrieve the data for that position.
         String mCurrent = mWordList.get(position).getTitle();
+        List<String> a=mWordList.get(position).getAuthors();
+        String mcurrent2="";
+        for (int i=0;i<a.size();i++)
+        {
+            mcurrent2+=a.get(i);
+        }
         // Add the data to the view holder.
         holder.wordItemView.setText(mCurrent);
+
+        holder.wordItemView2.setText(mcurrent2);
     }
 
     /**

@@ -5,26 +5,27 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
+    ir-eligibility="FIELD_ADDED"
     plugin-version="3.3.1"
-    timestamp="1551637128190"
+    timestamp="1551638777368"
     token="-5183958220088301203"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="874" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="61" />
     <task
         name="verifier"
-        duration="0" />
+        duration="6" />
 
     <artifact
-        location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+        location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
         type="SPLIT" />
 
     <build
@@ -80,9 +81,6 @@
             location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
-        <artifact
             location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
     </build>
@@ -92,6 +90,15 @@
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="FIELD_ADDED"
+        timestamp="1551638777368"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
     </build>
 
