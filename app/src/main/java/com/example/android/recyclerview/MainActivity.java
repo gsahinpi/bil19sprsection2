@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
          public hakan(Context c,LinkedList<String> datalist, RecyclerView mRecyclerViewrecycleisaret, WordListAdapter adapterisaret) {
              con=c;
-             this.datalist = datalist;;
+             this.datalist = datalist;
              this.mRecyclerViewrecycleisaret = mRecyclerViewrecycleisaret;
              this.adapterisaret = adapterisaret;
          }
@@ -127,8 +127,12 @@ public class MainActivity extends AppCompatActivity {
          @Override
          protected LinkedList<String> doInBackground(Void... voids) {
 
+             NetworkUtils.getBookInfo("otello");
+
+
              for (int i = 0; i < 20; i++) {
                  datalist.addLast("!Word " + i);
+
              }
              return datalist;
          }//doin backgrround

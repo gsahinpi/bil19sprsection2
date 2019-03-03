@@ -65,8 +65,8 @@ public class NetworkUtils {
             // printed books.
             Uri builtURI = Uri.parse(BOOK_BASE_URL).buildUpon()
                     .appendQueryParameter(QUERY_PARAM, queryString)
-                    .appendQueryParameter(MAX_RESULTS, "100")
-                    .appendQueryParameter(PRINT_TYPE, "books")
+                   // .appendQueryParameter(MAX_RESULTS, "100")
+                    //.appendQueryParameter(PRINT_TYPE, "books")
                     .build();
 
             // Convert the URI to a URL,
