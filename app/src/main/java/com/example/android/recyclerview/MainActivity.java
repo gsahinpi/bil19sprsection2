@@ -28,6 +28,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.LinkedList;
 
 /**
@@ -127,16 +131,53 @@ public class MainActivity extends AppCompatActivity {
          @Override
          protected LinkedList<String> doInBackground(Void... voids) {
 
-             NetworkUtils.getBookInfo("otello");
+            String returned= NetworkUtils.getBookInfo("otello");
+             processreturned(returned);//since data list fieldof the main activity
 
 
-             for (int i = 0; i < 20; i++) {
-                 datalist.addLast("!Word " + i);
 
-             }
+
              return datalist;
          }//doin backgrround
+
+         private void processreturned(String returned) {
+             JSONObject jsonObject = null;
+             try {
+                 jsonObject = new JSONObject(returned);
+                 JSONArray itemsArray = jsonObject.getJSONArray("items");
+                 for (int i=0;i<itemsArray.length();i++)
+                 {
+                     JSONObject book = itemsArray.getJSONObject(i);
+                     JSONObject volumeInfo = book.getJSONObject("volumeInfo");
+                     // catch if either field is empty and move on.
+                     try {
+                        String title = volumeInfo.getString("title");
+                        String authors = volumeInfo.getString("authors");
+                        datalist.add(title+":"+authors);
+
+
+                     } catch (Exception e){
+                         e.printStackTrace();
+                     }
+
+
+                 }//for
+             } catch (JSONException e) {
+                 e.printStackTrace();
+             }
+             // Get the JSONArray of book items.
+
+
+
+
+
+         }
+
          protected void onPostExecute(LinkedList<String> result) {
+
+
+
+
              mAdapter = new WordListAdapter(con, mWordList);
              // Connect the adapter with the recycler view.
              mRecyclerView.setAdapter(mAdapter);

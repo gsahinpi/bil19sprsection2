@@ -5,24 +5,24 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
+    ir-eligibility="METHOD_ADDED"
     plugin-version="3.3.1"
-    timestamp="1551632585379"
+    timestamp="1551633681349"
     token="-5183958220088301203"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="521" />
+        duration="461" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="33" />
+        duration="95" />
     <task
         name="verifier"
-        duration="6" />
+        duration="21" />
 
     <artifact
         location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
@@ -74,8 +74,8 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1551632585379"
+        ir-eligibility="METHOD_ADDED"
+        timestamp="1551633681349"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/gokhansahin/Desktop/bil19sprinclass/section2/RecyclerView/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
